@@ -1,0 +1,27 @@
+{
+  "name": "tickets-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "babel ./src --watch -d dist & NODE_ENV=development NODE_PATH=./dist nodemon --watch ./dist ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "casinX",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.5.5",
+    "forever": "^1.0.0"
+  }
+}

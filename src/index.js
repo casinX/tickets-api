@@ -17,7 +17,10 @@ const server = http.createServer((request, response) => {
     return jsonResponse(response, { message: 'Method Not Allowed' }, 405);
   }
 
-  return jsonResponse(response, tickets);
+  // симулируем 3g
+  setTimeout(() => {
+    return jsonResponse(response, tickets);
+  }, 500 + Math.random() * 2000);
 });
 
 

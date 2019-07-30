@@ -6,12 +6,12 @@ import serverConfig from 'config/server';
 import jsonResponse from 'utils/jsonResponse';
 
 
+// написал тут чтобы на диск не ходил, все равно данные не меняются
 const data = fs.readFileSync(path.resolve(__dirname, '../fakeDB/tickets.json'), 'utf8');
 const tickets = JSON.parse(data);
 
 
 const server = http.createServer((request, response) => {
-
   // можно конечно сделать нормальную структуру роутов и тд, но тут просто отдать
   if(request.url !== '/tickets.list' || request.method !== 'GET'){
     return jsonResponse(response, { message: 'Method Not Allowed' }, 405);
